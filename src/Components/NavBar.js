@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 let cartItemCount = 3; 
@@ -12,12 +14,14 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">BooQueen</Navbar.Brand>
+      <Link to="/" className="brand-logo">
+        BooQueen
+      </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">Ofertas</Nav.Link>
-            <Nav.Link href="#pricing">Destinos</Nav.Link>
+            <Nav.Link href="ItemDetails">Hoteles</Nav.Link>
             <NavDropdown title="Paquetes" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Vuelo + Hospedaje</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
