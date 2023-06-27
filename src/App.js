@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import About from '../src/Components/About';
-import Contact from './Components/Contact';
+
 import './App.css';
 import NavBar from './Components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemList from './Components/ItemList';
 import ItemDetails from './Components/ItemDetails';
-import Hoteles from './Components/Hoteles';
+
 
 
 
@@ -24,13 +23,8 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemList items={items} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
           <Route exact path="/items" element={<ItemList items={items} />} />
           <Route path="/items/:id" element={<ItemDetails items={items} />} />
-          <Route path="/hoteles/3estrellas" component={Hoteles} />
-          <Route path="/hoteles/4estrellas" component={Hoteles} />
-          <Route path="/components/hoteles/5estrellas" component={Hoteles} />
         </Routes>
       </div>
     </BrowserRouter>
